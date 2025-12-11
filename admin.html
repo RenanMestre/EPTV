@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Administrativo - EPTV</title>
+    <link rel="stylesheet" href="src/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="src/css/admin.css">
+</head>
+<body>
+    <div class="background-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-header">
+                <img src="src/img/EPTV.png" alt="Logo EPTV" style="height: 40px;">
+                <span>EPTV Admin</span>
+            </div>
+            <nav class="nav">
+                <div class="user-info">
+                    <i class="fas fa-user-circle"></i>
+                    <span id="userName">Administrador</span>
+                </div>
+                <a href="login.html" class="btn-logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Sair</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="welcome-section">
+                <h1>Bem-vindo, <span id="adminName">Administrador</span>! 👋</h1>
+                <p class="subtitle">Gerencie o sistema através do painel de controle</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon users">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Usuários</h3>
+                        <p class="stat-number">156</p>
+                        <span class="stat-label">Cadastrados no sistema</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon tickets">
+                        <i class="fas fa-ticket-alt"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Chamados</h3>
+                        <p class="stat-number">23</p>
+                        <span class="stat-label">Aguardando atendimento</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon resolved">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Resolvidos</h3>
+                        <p class="stat-number">342</p>
+                        <span class="stat-label">Este mês</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon activity">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Desempenho</h3>
+                        <p class="stat-number">98%</p>
+                        <span class="stat-label">Taxa de satisfação</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="actions-section">
+                <h2>Ações Rápidas</h2>
+                <div class="actions-grid">
+                    <a href="cadastro.html"><button class="action-card">
+                        <div class="action-icon primary">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                        <div class="action-content">
+                            <h3>Cadastrar Usuários</h3>
+                            <p>Adicione novos usuários ao sistema</p>
+                        </div>
+                        <i class="fas fa-arrow-right action-arrow"></i>
+                    </button></a>
+
+                    <a href="chamado.html"><button class="action-card" onclick="openModal('tickets')">
+                        <div class="action-icon secondary">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <div class="action-content">
+                            <h3>Abrir Chamado</h3>
+                            <p>Cadastre novos chamados de suporte</p>
+                        </div>
+                        <i class="fas fa-arrow-right action-arrow"></i>
+                    </button></a>
+
+                    <button class="action-card">
+                        <div class="action-icon success">
+                            <i class="fas fa-list-check"></i>
+                        </div>
+                        <div class="action-content">
+                            <h3>Gerenciar Chamados</h3>
+                            <p>Visualize e gerencie chamados existentes</p>
+                        </div>
+                        <i class="fas fa-arrow-right action-arrow"></i>
+                    </button>
+
+                    <a href="relatorios.html"><button class="action-card">
+                        <div class="action-icon warning">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="action-content">
+                            <h3>Relatórios</h3>
+                            <p>Gere relatórios e análises do sistema</p>
+                        </div>
+                        <i class="fas fa-arrow-right action-arrow"></i>
+                    </button></a>
+                </div>
+            </div>
+
+            <div class="recent-activity">
+                <h2>Atividades Recentes</h2>
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <div class="activity-icon success">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="activity-details">
+                            <p class="activity-title">Chamado #1234 resolvido</p>
+                            <span class="activity-time">Há 5 minutos</span>
+                        </div>
+                    </div>
+
+                    <div class="activity-item">
+                        <div class="activity-icon primary">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                        <div class="activity-details">
+                            <p class="activity-title">Novo usuário cadastrado: João Silva</p>
+                            <span class="activity-time">Há 15 minutos</span>
+                        </div>
+                    </div>
+
+                    <div class="activity-item">
+                        <div class="activity-icon warning">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="activity-details">
+                            <p class="activity-title">Chamado #1230 aguardando atenção</p>
+                            <span class="activity-time">Há 30 minutos</span>
+                        </div>
+                    </div>
+
+                    <div class="activity-item">
+                        <div class="activity-icon success">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="activity-details">
+                            <p class="activity-title">Backup do sistema concluído</p>
+                            <span class="activity-time">Há 1 hora</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Desenvolvido pela <a href="https://www.scripthadder.com.br">ScriptHadder</a>. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Animação de números
+        function animateNumbers() {
+            const numbers = document.querySelectorAll('.stat-number');
+            numbers.forEach(num => {
+                const target = parseInt(num.textContent);
+                let current = 0;
+                const increment = target / 50;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        num.textContent = target + (num.textContent.includes('%') ? '%' : '');
+                        clearInterval(timer);
+                    } else {
+                        num.textContent = Math.floor(current) + (num.textContent.includes('%') ? '%' : '');
+                    }
+                }, 20);
+            });
+        }
+
+        window.addEventListener('load', animateNumbers);
+    </script>
+</body>
+</html>

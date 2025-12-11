@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmação - EPTV</title>
+    <link rel="stylesheet" href="src/css/confirmacao.css">
+</head>
+<body>
+    <main class="main-content">
+        <div class="container">
+            <form action="">
+
+                <h2>Formulário de confirmação</h2>
+
+                <div class="input-group">
+                    <label for="">Nome completo do técnico:</label>
+                    <input type="text" name="nome" placeholder="Nome do técnico...">
+                </div>
+
+                <div class="input-group">
+                    <label for="">Data:</label>
+                    <input type="date" name="data" placeholder="Data...">
+                </div>
+
+                <div class="input-group">
+                    <label for="status">Status:</label>
+                    <input list="status-options" id="status" name="status" placeholder="Status..." required>
+                    <datalist id="status-options">
+                        <option value="Em andamento">
+                        <option value="Concluído">
+                        <option value="Cancelado">
+                    </datalist>
+                </div>
+
+                <button type="submit">Salvar</button>
+                <a href="index.html"><button type="button">Cancelar</button></a>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

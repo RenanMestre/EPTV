@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamado - EPTV</title>
+    <link rel="stylesheet" href="src/css/chamado.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="background-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-header">
+                <img src="src/img/EPTV.png" alt="Logo EPTV" style="height: 40px;">
+                <span>EPTV Admin</span>
+            </div>
+            <nav class="nav">
+                <div class="user-info">
+                    <i class="fas fa-user-circle"></i>
+                    <span id="userName">Administrador</span>
+                </div>
+                <a href="login.html" class="btn-logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Sair</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    
+    <main class="main-content">
+
+        <div class="container">
+
+            <form action="">
+                <h2>Formulário de Chamado</h2>
+
+                <div class="input-group">
+                    <label for="nome">Nome do solicitante:</label>
+                    <input type="text" id="nome" name="nome" placeholder="Nome completo..." required>
+                </div>
+
+                <div class="input-group">
+                    <label for="setor">Setor do solicitante:</label>
+                    <input type="text" id="setor" name="setor" placeholder="Setor..." required>
+                </div>
+
+                <div class="input-group">
+                    <label for="equipamento">Equipamento para suporte:</label>
+                    <input type="text" id="equipamento" name="equipamento" placeholder="Equipamento..." required>
+                </div>
+
+                <div class="input-group">
+                    <label for="registro">Número de registro do equipamento:</label>
+                    <input type="number" id="registro" name="registro" placeholder="Número de registro..." required>
+                </div>
+
+                <div class="input-group">
+                    <label for="data">Data:</label>
+                    <input type="date" id="data" name="data" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="status">Status:</label>
+                    <input list="status-options" id="status" name="status" placeholder="Status..." required>
+                    <datalist id="status-options">
+                        <option value="Aberto">
+                        <option value="Em andamento">
+                        <option value="Concluído">
+                        <option value="Pendente">
+                        <option value="Cancelado">
+                    </datalist>
+                </div>
+
+                <label for="observacao">Observações:</label>
+                <br>
+                <textarea name="observacao" id="observacao" placeholder="Observações..."></textarea>
+
+                <button type="submit" class="btn-cadastrar" disabled>Cadastrar</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Desenvolvido pela <a href="https://www.scripthadder.com.br">ScriptHadder</a>. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

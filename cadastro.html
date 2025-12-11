@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuário - EPTV</title>
+    <link rel="stylesheet" href="src/css/cadastro.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .password-fort ul li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .password-fort ul li.valid {
+            color: green;
+            transform: translateX(10px);
+        }
+
+        .password-fort ul li.invalid {
+            color: red;
+            transform: translateX(0);
+        }
+
+        .password-fort ul li .checkbox {
+            width: 16px;
+            height: 16px;
+            border: 2px solid currentColor;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            color: white;
+            background-color: transparent;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .password-fort ul li.valid .checkbox {
+            background-color: green;
+            border-color: green;
+        }
+
+        .password-fort ul li.invalid .checkbox {
+            background-color: transparent;
+            border-color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-header">
+                <img src="src/img/EPTV.png" alt="Logo EPTV" style="height: 40px;">
+                <span>EPTV Admin</span>
+            </div>
+            <nav class="nav">
+                <div class="user-info">
+                    <i class="fas fa-user-circle"></i>
+                    <span id="userName">Administrador</span>
+                </div>
+                <a href="login.html" class="btn-logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Sair</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    
+    <main class="main-content">
+
+        <div class="container">
+
+            <form action="">
+                <h2>Formulário de Cadastro</h2>
+
+                <div class="input-group">
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" id="nome" name="nome" placeholder="Nome completo..." required>
+                </div>
+
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Email..." required>
+                </div>
+
+                <div class="input-group">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" name="senha" placeholder="Senha..." required>
+                </div>
+
+                <div class="password-fort">
+                    <p>Sua senha deve conter pelo menos:</p>
+                    <ul>
+                        <li><span class="checkbox"></span> 8 caracteres</li>
+                        <li><span class="checkbox"></span> Uma letra maiúscula</li>
+                        <li><span class="checkbox"></span> Um número</li>
+                        <li><span class="checkbox"></span> Um caractere especial (!@#$%^&*)</li>
+                    </ul>
+                </div>
+                
+                <div class="input-group">
+                    <label for="confirmar-senha">Confirmar Senha</label>
+                    <input type="password" id="confirmar-senha" name="confirmar-senha" placeholder="Confirmar senha..." required>
+                </div>
+
+                <button type="submit" class="btn-cadastrar" disabled>Cadastrar</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Desenvolvido pela <a href="https://www.scripthadder.com.br">ScriptHadder</a>. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const senhaInput = document.getElementById('senha');
+            const confirmarSenhaInput = document.getElementById('confirmar-senha');
+            const cadastrarBtn = document.querySelector('.btn-cadastrar');
+            const passwordFortList = document.querySelector('.password-fort ul');
+            const criteria = [
+                { regex: /.{8,}/, element: passwordFortList.children[0] }, // Pelo menos 8 caracteres
+                { regex: /[A-Z]/, element: passwordFortList.children[1] }, // Uma letra maiúscula
+                { regex: /\d/, element: passwordFortList.children[2] },   // Um número
+                { regex: /[!@#$%^&*]/, element: passwordFortList.children[3] } // Um caractere especial
+            ];
+
+            const senhaErro = document.createElement('p');
+            senhaErro.style.color = 'red';
+            senhaErro.style.fontSize = '0.9rem';
+            senhaErro.style.marginTop = '5px';
+            senhaErro.textContent = 'As senhas não coincidem!';
+            senhaErro.style.display = 'none';
+            confirmarSenhaInput.parentNode.appendChild(senhaErro);
+
+            function validatePassword() {
+                let allValid = true;
+
+                criteria.forEach(({ regex, element }) => {
+                    const checkbox = element.querySelector('.checkbox');
+                    if (regex.test(senhaInput.value)) {
+                        element.classList.add('valid');
+                        element.classList.remove('invalid');
+                        checkbox.textContent = '✓';
+                    } else {
+                        element.classList.add('invalid');
+                        element.classList.remove('valid');
+                        checkbox.textContent = '';
+                        allValid = false;
+                    }
+                });
+
+                if (senhaInput.value !== confirmarSenhaInput.value) {
+                    senhaErro.style.display = 'block';
+                    allValid = false;
+                } else {
+                    senhaErro.style.display = 'none';
+                }
+
+                cadastrarBtn.disabled = !allValid;
+            }
+
+            senhaInput.addEventListener('input', validatePassword);
+            confirmarSenhaInput.addEventListener('input', validatePassword);
+        });
+    </script>
+
+</body>
+</html>

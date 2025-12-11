@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Sistema EPTV</title>
+    <link rel="stylesheet" href="src/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-header">
+                <img src="src/img/EPTV.png" alt="Logo EPTV" style="height: 40px;">
+                <span>EPTV - Sistema de Suporte</span>
+            </div>
+            <nav class="nav">
+                <div class="user-info">
+                    <i class="fas fa-user-circle"></i>
+                    <span id="userName">Bem-vindo</span>
+                </div>
+                <a href="login.html" class="btn-login">
+                    <i class="fas fa-sign-in-alt"></i>
+                    <span>Login</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="welcome-section">
+                <h1>Sistema de Suporte Técnico EPTV</h1>
+                <p class="subtitle">Plataforma integrada para gerenciamento eficiente de chamados e suporte técnico</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-ticket-alt"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Chamados Ativos</h3>
+                        <div class="stat-number">24</div>
+                        <span class="stat-change positive">+3 hoje</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Pendentes</h3>
+                        <div class="stat-number">8</div>
+                        <span class="stat-change neutral">Em análise</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Resolvidos Hoje</h3>
+                        <div class="stat-number">12</div>
+                        <span class="stat-change positive">+8 desde ontem</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Técnicos Online</h3>
+                        <div class="stat-number">6</div>
+                        <span class="stat-change positive">Disponíveis</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="features-grid">
+                <div class="recent-activity">
+                    <h2>Chamados</h2>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon success">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="activity-details">
+                                <p class="activity-title">Chamado #1234</p>
+                                <span class="activity-time">Há 5 minutos</span>
+
+                                <div class="button-submity">
+                                    <a href="confirmacao.html">
+                                        <button>
+                                            <i class="fas fa-check"></i>
+                                        </button>
+                                    </a>
+                                </div>
+
+                                <div class="button-edit">
+                                    <a href="editar.html">
+                                        <button>
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="activity-item">
+                            <div class="activity-icon primary">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+                            <div class="activity-details">
+                                <p class="activity-title">Chamado #1230 concluído</p>
+                                <span class="activity-time">Há 15 minutos</span>
+
+                                <div class="button-submity">
+                                    <a href="confirmacao.html">
+                                        <button>
+                                            <i class="fas fa-check"></i>
+                                        </button>
+                                    </a>
+                                </div>
+
+                                <div class="button-edit">
+                                    <a href="editar.html">
+                                        <button>
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="activity-item">
+                            <div class="activity-icon warning">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div class="activity-details">
+                                <p class="activity-title">Chamado #1230 aguardando atenção</p>
+                                <span class="activity-time">Há 30 minutos</span>
+
+                                <div class="button-submity">
+                                    <a href="confirmacao.html">
+                                        <button>
+                                            <i class="fas fa-check"></i>
+                                        </button>
+                                    </a>
+                                </div>
+
+                                <div class="button-edit">
+                                    <a href="editar.html">
+                                        <button>
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="activity-item">
+                            <div class="activity-icon success">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="activity-details">
+                                <p class="activity-title">Backup do sistema concluído</p>
+                                <span class="activity-time">Há 1 hora</span>
+
+                                <div class="buttons">
+                                    <div class="button-submity">
+                                        <a href="confirmacao.html">
+                                            <button>
+                                                <i class="fas fa-check"></i>
+                                            </button>
+                                        </a>
+                                    </div>
+    
+                                    <div class="button-edit">
+                                        <a href="editar.html">
+                                            <button>
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+
+            <div class="info-section">
+                <div class="info-card">
+                    <h3><i class="fas fa-info-circle"></i> Sobre o Sistema</h3>
+                    <p>O Sistema de Gestão de Suporte Técnico EPTV foi desenvolvido para otimizar o atendimento e resolver demandas de forma eficiente. Com funcionalidades avançadas de controle e monitoramento, garante a excelência no suporte aos usuários.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Desenvolvido pela <a href="https://www.scripthadder.com.br">ScriptHadder</a>. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animação dos números das estatísticas
+            const statNumbers = document.querySelectorAll('.stat-number');
+            statNumbers.forEach(number => {
+                const finalValue = parseInt(number.textContent);
+                let currentValue = 0;
+                const increment = finalValue / 20;
+                const timer = setInterval(() => {
+                    currentValue += increment;
+                    if (currentValue >= finalValue) {
+                        number.textContent = finalValue;
+                        clearInterval(timer);
+                    } else {
+                        number.textContent = Math.floor(currentValue);
+                    }
+                }, 50);
+            });
+
+            // Atualização em tempo real (simulado)
+            setInterval(() => {
+                const activeTickets = document.querySelector('.stat-card:first-child .stat-number');
+                const currentValue = parseInt(activeTickets.textContent);
+                const variation = Math.random() > 0.7 ? (Math.random() > 0.5 ? 1 : -1) : 0;
+                if (currentValue + variation >= 0) {
+                    activeTickets.textContent = currentValue + variation;
+                }
+            }, 10000);
+        });
+    </script>
+</body>
+</html>
